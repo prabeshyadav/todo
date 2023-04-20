@@ -37,3 +37,12 @@ def update_task(request,pk):
     context={'form':form}
     return render(request,'current/updated.html',context)
         
+    
+def delete_task(request,pk):
+    
+    item=Task.objects.get(id=pk)
+    
+    context={'item':item}
+    return render(request,'current/delete.html',context)
+    
+    
